@@ -4,6 +4,8 @@ import usersRouter from "./routes/users.js";
 import classesRouter from "./routes/classes.js";
 import cors from "cors";
 import securityMiddleware from "./middleware/security";
+import { toNodeHandler } from "better-auth/node";
+import { auth } from "./lib/auth";
 
 const app = express();
 const PORT = 8000;
@@ -17,6 +19,9 @@ app.use(
     credentials: true,
   }),
 );
+
+app.all("/api/auth/*splat", toNodeHandler(auth));
+
 app.use(express.json());
 app.use("/api/v1/subjects", subjectsRouter);
 app.use("/api/users", usersRouter);

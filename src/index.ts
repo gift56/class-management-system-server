@@ -4,11 +4,11 @@ AgentAPI.config();
 import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
 import express from "express";
-import subjectsRouter from "./routes/subjects";
+import subjectsRouter from "./routes/subjects.js";
 import usersRouter from "./routes/users.js";
 import classesRouter from "./routes/classes.js";
-import securityMiddleware from "./middleware/security";
-import { auth } from "./lib/auth";
+import securityMiddleware from "./middleware/security.js";
+import { auth } from "./lib/auth.js";
 
 const app = express();
 const PORT = 8000;

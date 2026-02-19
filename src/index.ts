@@ -1,6 +1,9 @@
 import express from "express";
 import subjectsRouter from "./routes/subjects";
+import usersRouter from "./routes/users.js";
+import classesRouter from "./routes/classes.js";
 import cors from "cors";
+import securityMiddleware from "./middleware/security";
 
 const app = express();
 const PORT = 8000;
@@ -16,6 +19,10 @@ app.use(
 );
 app.use(express.json());
 app.use("/api/v1/subjects", subjectsRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/classes", classesRouter);
+
+app.use(securityMiddleware);
 
 app.get("/", (req, res) => {
   res.send("Class Management API is running! 🎉🎉");

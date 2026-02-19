@@ -8,6 +8,13 @@
       "when": 1771446703923,
       "tag": "0000_bumpy_cardiac",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1771500102510,
+      "tag": "0001_cloudy_deathbird",
+      "breakpoints": true
     }
   ]
 }

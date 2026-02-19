@@ -1,10 +1,13 @@
+import AgentAPI from "apminsight";
+AgentAPI.config();
+
+import cors from "cors";
+import { toNodeHandler } from "better-auth/node";
 import express from "express";
 import subjectsRouter from "./routes/subjects";
 import usersRouter from "./routes/users.js";
 import classesRouter from "./routes/classes.js";
-import cors from "cors";
 import securityMiddleware from "./middleware/security";
-import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
 
 const app = express();

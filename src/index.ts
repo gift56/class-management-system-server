@@ -27,8 +27,8 @@ app.all("/api/auth/*splat", toNodeHandler(auth));
 
 app.use(express.json());
 app.use("/api/v1/subjects", subjectsRouter);
-app.use("/api/users", usersRouter);
-app.use("/api/classes", classesRouter);
+app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/classes", classesRouter);
 
 app.use(securityMiddleware);
 
